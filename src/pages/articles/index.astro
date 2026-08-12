@@ -1,0 +1,53 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const articles = [
+  { title: "Thai Keto Diet: Complete Beginner's Guide", slug: "thai-keto-diet-beginners-guide", description: "Everything you need to know about combining Thai cuisine with the ketogenic diet — what to eat, what to avoid, and how to get started.", date: "August 12, 2026", category: "Guide" },
+  { title: "Keto Thai Curry: Green, Red & Panang Recipes", slug: "keto-thai-curry-recipes", description: "Authentic Thai curry recipes adapted for keto — low-carb green curry, red curry, and Panang that taste like the real thing.", date: "August 12, 2026", category: "Recipes" },
+  { title: "Thai Keto Food List: 50+ Ingredients to Stock", slug: "thai-keto-food-list", description: "The ultimate Thai keto grocery list — proteins, vegetables, sauces, and pantry staples for low-carb Thai cooking.", date: "August 12, 2026", category: "Guide" },
+  { title: "Keto Pad Thai: Low-Carb Noodle Alternatives", slug: "keto-pad-thai-recipe", description: "Make authentic-tasting Pad Thai without the carbs. Konjac noodles, zucchini noodles, and the perfect keto Pad Thai sauce.", date: "August 12, 2026", category: "Recipes" },
+  { title: "Thai Keto Meal Plan: 7 Days of Low-Carb Thai Food", slug: "thai-keto-meal-plan", description: "A complete 7-day Thai keto meal plan with breakfast, lunch, and dinner — all under 25g net carbs per day.", date: "August 12, 2026", category: "Meal Plan" },
+  { title: "Keto Tom Yum Soup: Authentic Low-Carb Recipe", slug: "keto-tom-yum-soup", description: "The classic hot and sour Thai soup made keto-friendly. Tom Yum Goong with shrimp, mushrooms, and aromatic herbs.", date: "August 12, 2026", category: "Recipes" },
+  { title: "Thai Keto Ingredients Guide: Sauces, Herbs & Substitutes", slug: "thai-keto-ingredients-guide", description: "Navigate Thai cooking on keto — which sauces are low-carb, herb substitutions, and where to find keto-friendly Thai ingredients.", date: "August 12, 2026", category: "Guide" },
+  { title: "Keto Thai Green Curry: Restaurant-Quality at Home", slug: "keto-thai-green-curry", description: "Master keto Thai green curry with this step-by-step guide. Coconut milk, green curry paste, and low-carb vegetables.", date: "August 12, 2026", category: "Recipes" },
+];
+---
+
+<BaseLayout
+  title="Thai Keto Articles — Guides, Recipes & Meal Plans"
+  description="Browse all Thai keto articles: beginner guides, authentic recipes, meal plans, and ingredient deep-dives for low-carb Thai cooking."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-display font-semibold text-primary mb-4">Thai Keto Articles</h1>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+        In-depth guides, authentic recipes, and meal plans for mastering Thai keto cooking
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {articles.map((article) => (
+        <a href={`/articles/${article.slug}`} class="card card-hover group">
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-accent text-xs">{article.category}</span>
+              <span class="text-xs text-neutral-500">{article.date}</span>
+            </div>
+            <h2 class="text-lg font-semibold text-primary mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
+              {article.title}
+            </h2>
+            <p class="text-neutral-600 text-sm line-clamp-3 mb-4">
+              {article.description}
+            </p>
+            <span class="text-accent font-medium text-sm flex items-center gap-1">
+              Read Article
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

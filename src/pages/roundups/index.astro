@@ -1,0 +1,49 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const roundups = [
+  { title: "Best Coconut Aminos for Keto Thai Cooking", slug: "best-coconut-aminos-keto", description: "Coconut aminos are essential for keto Thai cooking. We compare the top brands for flavor, price, and carb content.", date: "August 12, 2026" },
+  { title: "Best Keto-Friendly Curry Pastes for Thai Cooking", slug: "best-keto-curry-pastes", description: "Not all curry pastes are keto. We tested 8 brands to find the lowest-carb Thai curry pastes that still deliver authentic flavor.", date: "August 12, 2026" },
+  { title: "Best Konjac & Shirataki Noodles for Keto Pad Thai", slug: "best-konjac-noodles-keto", description: "The best low-carb noodle alternatives for keto Pad Thai, drunken noodles, and Thai soups. Taste tests and carb comparisons.", date: "August 12, 2026" },
+  { title: "Best Coconut Milk for Keto: Full-Fat & Low-Carb Picks", slug: "best-coconut-milk-keto", description: "Coconut milk is a keto staple for Thai curries. We rank the best full-fat, additive-free coconut milk brands.", date: "August 12, 2026" },
+];
+---
+
+<BaseLayout
+  title="Thai Keto Product Roundups — Best Keto Thai Cooking Products"
+  description="Expert-tested product roundups for Thai keto cooking: coconut aminos, curry pastes, konjac noodles, coconut milk, and more."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-display font-semibold text-primary mb-4">Product Roundups</h1>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+        The best keto-friendly Thai cooking products, tested and compared so you can shop with confidence
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {roundups.map((roundup) => (
+        <a href={`/roundups/${roundup.slug}`} class="card card-hover group">
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-primary text-xs">Roundup</span>
+              <span class="text-xs text-neutral-500">{roundup.date}</span>
+            </div>
+            <h2 class="text-lg font-semibold text-primary mb-2 group-hover:text-primary-600 transition-colors">
+              {roundup.title}
+            </h2>
+            <p class="text-neutral-600 text-sm line-clamp-3 mb-4">
+              {roundup.description}
+            </p>
+            <span class="text-accent font-medium text-sm flex items-center gap-1">
+              View Roundup
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,167 @@
+---
+import "@/styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "ThaiKeto — Your Guide to Thai Keto Diet, Recipes & Ingredients",
+  description = "Discover the best Thai keto recipes, ingredients, and meal plans. Expert guides on keto-friendly Thai curries, soups, and street food adaptations.",
+  image = "/images/og-default.png",
+  canonical,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {!noindex && <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+
+    <meta name="author" content="ThaiKeto Team" />
+    <meta name="theme-color" content="#1B5E20" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site).href} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ThaiKeto" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site).href} />
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen bg-neutral-100 font-body text-neutral-900 antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md z-50">
+      Skip to main content
+    </a>
+
+    <!-- Affiliate Disclosure Banner -->
+    <div class="bg-primary-600 text-white text-sm py-2">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p>
+          This site contains affiliate links. We may earn a commission when you make a purchase.
+          <a href="/disclosure" class="underline hover:no-underline ml-1">Learn more</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-neutral-200 sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center gap-2">
+            <span class="text-2xl">🥥</span>
+            <span class="text-xl font-display font-semibold text-primary">ThaiKeto</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="/articles" class="text-neutral-700 hover:text-primary font-medium text-sm transition-colors">Articles</a>
+            <a href="/roundups" class="text-neutral-700 hover:text-primary font-medium text-sm transition-colors">Product Roundups</a>
+            <a href="/about" class="text-neutral-700 hover:text-primary font-medium text-sm transition-colors">About</a>
+          </nav>
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-neutral-700 p-2" aria-label="Menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-2xl">🥥</span>
+              <span class="text-xl font-display font-semibold">ThaiKeto</span>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed">
+              Your guide to Thai keto cooking. Recipes, ingredients, meal plans, and product recommendations for a low-carb Thai lifestyle.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Content</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/articles" class="text-primary-100 hover:text-white transition-colors">Articles</a></li>
+              <li><a href="/roundups" class="text-primary-100 hover:text-white transition-colors">Product Roundups</a></li>
+              <li><a href="/about" class="text-primary-100 hover:text-white transition-colors">About</a></li>
+              <li><a href="/contact" class="text-primary-100 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/privacy" class="text-primary-100 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms" class="text-primary-100 hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="/disclosure" class="text-primary-100 hover:text-white transition-colors">Affiliate Disclosure</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-primary-600 mt-8 pt-8 text-center text-primary-200 text-sm">
+          <p>&copy; {new Date().getFullYear()} ThaiKeto. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- GA4 Analytics (placeholder) -->
+    <script is:inline>
+      const gaId = 'G-XXXXXXXXXX'; // FLAG: Replace with real GA4 measurement ID
+      if (gaId && gaId !== 'G-XXXXXXXXXX') {
+        var script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(script1);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', gaId);
+      }
+    </script>
+  </body>
+</html>

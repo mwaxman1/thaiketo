@@ -1,0 +1,277 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "thai-keto-diet-beginners-guide" } },
+    { params: { slug: "keto-thai-curry-recipes" } },
+  ];
+}
+
+// Article data — in production this would come from Astro content collections
+const articles: Record<string, {
+  title: string;
+  description: string;
+  metaDescription: string;
+  content: string;
+  faq: Array<{q: string; a: string}>;
+  date: string;
+  category: string;
+}> = {
+  "thai-keto-diet-beginners-guide": {
+    title: "Thai Keto Diet: The Complete Beginner's Guide (2026)",
+    description: "Everything you need to know about combining Thai cuisine with the ketogenic diet — what to eat, what to avoid, and how to get started with Thai keto cooking.",
+    metaDescription: "Complete beginner's guide to the Thai keto diet. Learn what Thai foods are keto-friendly, which to avoid, and how to start your Thai keto journey today.",
+    date: "2026-08-12",
+    category: "Guide",
+    faq: [
+      { q: "Can I eat Thai food on a keto diet?", a: "Yes! Many Thai dishes are naturally keto-friendly or easily adapted. Focus on coconut milk-based curries, grilled meats, soups like tom yum and tom kha, and stir-fries without sugar. Avoid rice, noodles, and sweet sauces." },
+      { q: "What is the best Thai dish for keto?", a: "Tom Yum soup and Thai green curry are two of the best keto-friendly Thai dishes. Tom Yum is naturally low-carb with shrimp and mushrooms in a spicy-sour broth. Green curry uses full-fat coconut milk and is high in healthy fats." },
+      { q: "How many carbs are in Thai green curry?", a: "A properly made keto Thai green curry contains approximately 8-12g net carbs per serving, mostly from vegetables and a small amount from the curry paste. Using full-fat coconut milk and avoiding added sugar keeps it keto-compatible." },
+      { q: "Is fish sauce keto-friendly?", a: "Yes, fish sauce is keto-friendly with 0-1g carbs per tablespoon. It's a fermented product made from anchovies and salt, making it an excellent low-carb flavor enhancer for Thai keto cooking." },
+      { q: "Can I eat Thai basil on keto?", a: "Absolutely. Thai basil (horapha) is a keto-friendly herb with negligible carbs. It adds authentic Thai flavor to stir-fries, curries, and salads without impacting your carb count." },
+    ],
+    content: `<h2>Why Thai Food and Keto Are a Perfect Match</h2>
+<p>At first glance, Thai cuisine and the ketogenic diet might seem incompatible. After all, Thai food is known for jasmine rice, rice noodles, and sweet sauces — all carb-heavy ingredients. But look closer, and you'll discover that Thai cuisine is actually one of the most keto-compatible food traditions in the world.</p>
+
+<p>Thai cooking is built on a foundation of aromatic herbs, healthy fats, and proteins — exactly what the keto diet calls for. Coconut milk, the backbone of Thai curries, is rich in medium-chain triglycerides (MCTs) that support ketosis. Lemongrass, galangal, kaffir lime leaves, and Thai basil add incredible flavor without adding carbs. And Thai grilled meats like gai yang (grilled chicken) and moo ping (grilled pork skewers) are naturally keto.</p>
+
+<h2>What Makes Thai Food Keto-Friendly</h2>
+<p>Several core elements of Thai cuisine align perfectly with keto principles:</p>
+<ul>
+<li><strong>Coconut milk:</strong> High in healthy fats, low in carbs (3-4g net per 1/2 cup). The foundation of most Thai curries.</li>
+<li><strong>Herbs and spices:</strong> Lemongrass, galangal, kaffir lime, Thai basil, cilantro, and chili peppers add bold flavor with zero carbs.</li>
+<li><strong>Fish sauce:</strong> A fermented umami bomb with virtually no carbs. Essential for authentic Thai flavor.</li>
+<li><strong>Proteins:</strong> Thai cuisine features abundant protein — shrimp, chicken, pork, beef, and fish — all keto staples.</li>
+<li><strong>Vegetables:</strong> Thai dishes incorporate low-carb vegetables like bok choy, Chinese broccoli, green beans, and bamboo shoots.</li>
+</ul>
+
+<h2>Thai Ingredients to Avoid on Keto</h2>
+<p>Not everything in Thai cooking is keto-friendly. Here are the main culprits to watch out for:</p>
+<ul>
+<li><strong>Palm sugar:</strong> The most common sweetener in Thai cooking. Substitute with erythritol, monk fruit, or allulose.</li>
+<li><strong>Sweet soy sauce (kecap manis):</strong> Thick, sweet Indonesian-style soy sauce used in some Thai dishes. Use regular soy sauce or coconut aminos instead.</li>
+<li><strong>Oyster sauce:</strong> Contains sugar and thickeners. Use in small amounts or find sugar-free versions.</li>
+<li><strong>Rice and rice noodles:</strong> The obvious ones. Substitute with cauliflower rice, konjac noodles, or zucchini noodles.</li>
+<li><strong>Tamarind paste (in large amounts):</strong> While tamarind has some carbs, small amounts in Pad Thai sauce are fine. Use sparingly.</li>
+<li><strong>Sweet chili sauce:</strong> Almost entirely sugar. Make your own with sugar-free sweetener.</li>
+</ul>
+
+<h2>How to Order Keto at a Thai Restaurant</h2>
+<p>Eating out at Thai restaurants on keto is easier than you might think. Here's your game plan:</p>
+<ol>
+<li><strong>Start with soup:</strong> Tom Yum (hot and sour) or Tom Kha (coconut) soups are naturally keto. Just ask for no sugar added.</li>
+<li><strong>Choose curries:</strong> Green, red, Panang, and yellow curries are all keto-friendly when made with coconut milk. Skip the rice.</li>
+<li><strong>Go for grilled meats:</strong> Gai yang (grilled chicken), moo ping (pork skewers), and neua yang (grilled beef) are excellent choices.</li>
+<li><strong>Stir-fries with modifications:</strong> Order pad kra pao (basil stir-fry) or pad prik king (green bean stir-fry) and ask for no sugar, no oyster sauce.</li>
+<li><strong>Salads:</strong> Larb (minced meat salad), yum nua (beef salad), and som tum (green papaya salad — moderate carbs, eat in moderation).</li>
+<li><strong>Always say "mai sai nam tan"</strong> — Thai for "no sugar added."</li>
+</ol>
+
+<h2>Essential Thai Keto Pantry Staples</h2>
+<p>Stock your kitchen with these keto-friendly Thai ingredients:</p>
+<ul>
+<li>Coconut milk (full-fat, unsweetened)</li>
+<li>Coconut aminos (soy sauce substitute)</li>
+<li>Fish sauce (Red Boat or Three Crabs brand)</li>
+<li>Thai curry pastes (check labels for sugar)</li>
+<li>Lemongrass, galangal, kaffir lime leaves (fresh or frozen)</li>
+<li>Thai basil, cilantro, mint</li>
+<li>Shrimp paste (kapi)</li>
+<li>Chili flakes and fresh Thai chilies</li>
+<li>Erythritol or monk fruit sweetener</li>
+<li>Konjac noodles and cauliflower rice</li>
+</ul>
+
+<h2>Getting Started: Your First Week</h2>
+<p>Ready to dive in? Here's a simple plan for your first week of Thai keto:</p>
+<ol>
+<li><strong>Day 1-2:</strong> Make a big batch of keto Thai green curry. It keeps well and tastes even better the next day.</li>
+<li><strong>Day 3:</strong> Try keto Tom Yum soup with shrimp — it takes 20 minutes and is nearly zero-carb.</li>
+<li><strong>Day 4:</strong> Make keto Pad Thai with konjac noodles. The sauce is the key — fish sauce, tamarind, and sugar-free sweetener.</li>
+<li><strong>Day 5:</strong> Thai basil stir-fry (pad kra pao) with ground pork and a fried egg on top.</li>
+<li><strong>Day 6-7:</strong> Experiment! Try a new curry paste or make larb (Thai minced meat salad).</li>
+</ol>
+
+<p>The beauty of Thai keto is that once you have the core pantry ingredients, you can make dozens of different dishes. The flavors are bold, the fats are healthy, and the variety keeps things interesting — exactly what you need to stick with keto long-term.</p>`
+  },
+  "keto-thai-curry-recipes": {
+    title: "Keto Thai Curry: Green, Red & Panang Recipes That Taste Authentic",
+    description: "Authentic Thai curry recipes adapted for keto — low-carb green curry, red curry, and Panang that deliver restaurant-quality flavor without the carbs.",
+    metaDescription: "Master keto Thai curry with these authentic low-carb recipes. Green curry, red curry, and Panang — all under 10g net carbs per serving. Restaurant-quality at home.",
+    date: "2026-08-12",
+    category: "Recipes",
+    faq: [
+      { q: "Is Thai green curry keto-friendly?", a: "Yes, Thai green curry is one of the most keto-friendly Thai dishes. Made with coconut milk, green curry paste, protein, and vegetables, a typical serving contains 8-12g net carbs. Just ensure no sugar is added." },
+      { q: "How many carbs are in Thai red curry?", a: "A keto-adapted Thai red curry contains approximately 7-10g net carbs per serving. The carbs come primarily from the curry paste and vegetables. Using full-fat coconut milk keeps the fat content high." },
+      { q: "What's the difference between green, red, and Panang curry?", a: "Green curry is the spiciest, made with green chilies and fresh herbs. Red curry is milder, made with dried red chilies. Panang curry is thicker, sweeter, and creamier with peanut notes — it's the richest of the three." },
+    ],
+    content: `<h2>The Art of Thai Curry on Keto</h2>
+<p>Thai curries are arguably the most keto-friendly category in Thai cuisine. Built on a foundation of full-fat coconut milk and aromatic curry paste, they're naturally high in healthy fats and bursting with flavor. The challenge isn't making them keto — it's making them taste authentic while avoiding the sugar that many recipes call for.</p>
+
+<p>In this guide, we'll walk through three classic Thai curries — green, red, and Panang — each adapted for keto without sacrificing an ounce of flavor.</p>
+
+<h2>Keto Thai Green Curry (Gaeng Keow Wan)</h2>
+<p>Green curry is the spiciest and most herbaceous of the Thai curries. The green color comes from fresh green chilies, cilantro, and kaffir lime in the curry paste.</p>
+
+<h3>Ingredients (Serves 4)</h3>
+<ul>
+<li>2 cans (13.5 oz each) full-fat coconut milk</li>
+<li>3-4 tbsp green curry paste (check label for sugar — Maesri and Mae Ploy are good options)</li>
+<li>1.5 lbs chicken thighs, cut into bite-sized pieces</li>
+<li>1 cup Thai eggplant or Japanese eggplant, quartered</li>
+<li>1 cup green beans, trimmed</li>
+<li>1 cup bamboo shoots (canned, drained)</li>
+<li>4-5 kaffir lime leaves, torn</li>
+<li>1 cup Thai basil leaves</li>
+<li>2 tbsp fish sauce</li>
+<li>1-2 tsp erythritol or monk fruit sweetener (to taste)</li>
+<li>2-3 Thai bird chilies (optional, for extra heat)</li>
+</ul>
+
+<h3>Instructions</h3>
+<ol>
+<li>Scoop the thick cream from one can of coconut milk into a wok or large pot. Heat over medium-high until it starts to separate and the oil rises to the surface (about 3-4 minutes).</li>
+<li>Add the green curry paste and stir-fry in the coconut cream for 2-3 minutes until very fragrant.</li>
+<li>Add the chicken and stir-fry until the outside is sealed (about 3 minutes).</li>
+<li>Pour in the remaining coconut milk and bring to a gentle simmer.</li>
+<li>Add eggplant, green beans, bamboo shoots, and kaffir lime leaves. Simmer for 15-20 minutes until vegetables are tender and chicken is cooked through.</li>
+<li>Season with fish sauce and sweetener. Taste and adjust — it should be salty, spicy, and slightly sweet.</li>
+<li>Remove from heat, stir in Thai basil leaves, and serve immediately.</li>
+</ol>
+<p><strong>Macros per serving:</strong> ~450 calories, 35g fat, 8g net carbs, 28g protein</p>
+
+<h2>Keto Thai Red Curry (Gaeng Phed)</h2>
+<p>Red curry is milder than green but still packs a punch. The red color comes from dried red chilies in the paste, giving it a deeper, more roasted flavor.</p>
+
+<h3>Ingredients (Serves 4)</h3>
+<ul>
+<li>2 cans (13.5 oz each) full-fat coconut milk</li>
+<li>3-4 tbsp red curry paste</li>
+<li>1.5 lbs chicken breast or thighs, sliced</li>
+<li>1 red bell pepper, sliced</li>
+<li>1 cup bamboo shoots</li>
+<li>1 cup zucchini, sliced into half-moons</li>
+<li>4-5 kaffir lime leaves</li>
+<li>1 cup Thai basil or regular basil</li>
+<li>2 tbsp fish sauce</li>
+<li>1-2 tsp erythritol</li>
+</ul>
+
+<h3>Instructions</h3>
+<ol>
+<li>Follow the same coconut cream + curry paste frying method as the green curry.</li>
+<li>Add chicken and stir-fry until sealed.</li>
+<li>Add remaining coconut milk, vegetables, and lime leaves.</li>
+<li>Simmer 15-20 minutes, season with fish sauce and sweetener.</li>
+<li>Finish with basil and serve.</li>
+</ol>
+<p><strong>Macros per serving:</strong> ~420 calories, 32g fat, 7g net carbs, 30g protein</p>
+
+<h2>Keto Panang Curry (Gaeng Panang)</h2>
+<p>Panang is the richest, creamiest Thai curry — thicker than green or red, with a subtle peanut flavor and a touch of sweetness. It's the ultimate comfort food curry.</p>
+
+<h3>Ingredients (Serves 4)</h3>
+<ul>
+<li>2 cans (13.5 oz each) full-fat coconut milk</li>
+<li>3-4 tbsp Panang curry paste</li>
+<li>1.5 lbs beef sirloin, thinly sliced against the grain</li>
+<li>1 cup green beans</li>
+<li>4-5 kaffir lime leaves, very thinly sliced</li>
+<li>2 tbsp fish sauce</li>
+<li>1-2 tsp erythritol</li>
+<li>1 tbsp natural peanut butter (sugar-free) — optional, for extra richness</li>
+<li>Thai basil and sliced red chili for garnish</li>
+</ul>
+
+<h3>Instructions</h3>
+<ol>
+<li>Fry the Panang curry paste in coconut cream as described above.</li>
+<li>Add beef and sear quickly (1-2 minutes per side).</li>
+<li>Add remaining coconut milk, green beans, and lime leaves.</li>
+<li>Simmer 10-12 minutes until beef is tender and sauce has thickened.</li>
+<li>Stir in peanut butter if using, season with fish sauce and sweetener.</li>
+<li>Garnish with Thai basil and sliced red chili.</li>
+</ol>
+<p><strong>Macros per serving:</strong> ~480 calories, 38g fat, 6g net carbs, 32g protein</p>
+
+<h2>Tips for Perfect Keto Thai Curry</h2>
+<ul>
+<li><strong>Fry the paste first:</strong> This step is non-negotiable. Frying the curry paste in coconut cream releases the aromatics and deepens the flavor.</li>
+<li><strong>Use full-fat coconut milk:</strong> Light coconut milk has fewer fats and more carbs per calorie. Full-fat is the keto choice.</li>
+<li><strong>Check your curry paste:</strong> Some brands add sugar and flour. Maesri, Mae Ploy, and Aroy-D are generally clean. Always read labels.</li>
+<li><strong>Don't boil:</strong> Simmer gently. Boiling can cause the coconut milk to separate and curdle.</li>
+<li><strong>Make ahead:</strong> Thai curries taste even better the next day. Make a double batch for easy keto meal prep.</li>
+</ul>`
+  },
+};
+
+const { slug } = Astro.params;
+const article = articles[slug as string];
+
+if (!article) {
+  return Astro.redirect("/404");
+}
+---
+
+<BaseLayout
+  title={article.title}
+  description={article.metaDescription}
+  canonical={`https://thaiketo.com/articles/${slug}`}
+>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <header class="mb-10 text-center">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <span class="badge badge-accent text-xs">{article.category}</span>
+        <span class="text-sm text-neutral-500">{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+      </div>
+      <h1 class="text-3xl lg:text-4xl font-display font-semibold text-primary leading-tight mb-4">
+        {article.title}
+      </h1>
+      <p class="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+        {article.description}
+      </p>
+    </header>
+
+    <div class="prose-thai" set:html={article.content} />
+
+    <!-- FAQ Section -->
+    {article.faq && article.faq.length > 0 && (
+      <section class="mt-16 border-t border-neutral-200 pt-10">
+        <h2 class="text-2xl font-display font-semibold text-primary mb-8">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          {article.faq.map((item) => (
+            <div>
+              <h3 class="text-lg font-semibold text-primary mb-2">{item.q}</h3>
+              <p class="text-neutral-700 leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Newsletter CTA -->
+    <section class="mt-16 bg-primary-50 rounded-lg p-8 text-center">
+      <h2 class="text-2xl font-display font-semibold text-primary mb-3">Get More Thai Keto Recipes</h2>
+      <p class="text-neutral-700 mb-6">Subscribe for weekly Thai keto recipes, meal plans, and tips.</p>
+      <form class="kc-email-capture flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="/api/subscribe" method="POST">
+        <input type="email" name="email" placeholder="Your email" required class="form-input flex-1" />
+        <input type="hidden" name="referrer" value={`article-${slug}`} />
+        <button type="submit" class="btn btn-primary btn-lg whitespace-nowrap">Subscribe</button>
+      </form>
+      <p class="kc-email-note text-sm text-neutral-500 mt-2"></p>
+    </section>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.metaDescription,
+    "author": { "@type": "Person", "name": "ThaiKeto Team" },
+    "publisher": { "@type": "Organization", "name": "ThaiKeto" },
+    "datePublished": article.date,
+    "dateModified": article.date,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://thaiketo.com/articles/${slug}` }
+  })} />
+</BaseLayout>

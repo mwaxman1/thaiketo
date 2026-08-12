@@ -1,0 +1,247 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const articles = [
+  { title: "Thai Keto Diet: Complete Beginner's Guide", slug: "thai-keto-diet-beginners-guide", description: "Everything you need to know about combining Thai cuisine with the ketogenic diet — what to eat, what to avoid, and how to get started.", date: "August 2026", category: "Guide" },
+  { title: "Keto Thai Curry: Green, Red & Panang Recipes", slug: "keto-thai-curry-recipes", description: "Authentic Thai curry recipes adapted for keto — low-carb green curry, red curry, and Panang that taste like the real thing.", date: "August 2026", category: "Recipes" },
+  { title: "Thai Keto Food List: 50+ Ingredients to Stock", slug: "thai-keto-food-list", description: "The ultimate Thai keto grocery list — proteins, vegetables, sauces, and pantry staples for low-carb Thai cooking.", date: "August 2026", category: "Guide" },
+  { title: "Keto Pad Thai: Low-Carb Noodle Alternatives", slug: "keto-pad-thai-recipe", description: "Make authentic-tasting Pad Thai without the carbs. Konjac noodles, zucchini noodles, and the perfect keto Pad Thai sauce.", date: "August 2026", category: "Recipes" },
+  { title: "Thai Keto Meal Plan: 7 Days of Low-Carb Thai Food", slug: "thai-keto-meal-plan", description: "A complete 7-day Thai keto meal plan with breakfast, lunch, and dinner — all under 25g net carbs per day.", date: "August 2026", category: "Meal Plan" },
+  { title: "Keto Tom Yum Soup: Authentic Low-Carb Recipe", slug: "keto-tom-yum-soup", description: "The classic hot and sour Thai soup made keto-friendly. Tom Yum Goong with shrimp, mushrooms, and aromatic herbs.", date: "August 2026", category: "Recipes" },
+  { title: "Thai Keto Ingredients Guide: Sauces, Herbs & Substitutes", slug: "thai-keto-ingredients-guide", description: "Navigate Thai cooking on keto — which sauces are low-carb, herb substitutions, and where to find keto-friendly Thai ingredients.", date: "August 2026", category: "Guide" },
+  { title: "Keto Thai Green Curry: Restaurant-Quality at Home", slug: "keto-thai-green-curry", description: "Master keto Thai green curry with this step-by-step guide. Coconut milk, green curry paste, and low-carb vegetables.", date: "August 2026", category: "Recipes" },
+];
+
+const roundups = [
+  { title: "Best Coconut Aminos for Keto Thai Cooking", slug: "best-coconut-aminos-keto", description: "Coconut aminos are essential for keto Thai cooking. We compare the top brands for flavor, price, and carb content.", date: "August 2026" },
+  { title: "Best Keto-Friendly Curry Pastes for Thai Cooking", slug: "best-keto-curry-pastes", description: "Not all curry pastes are keto. We tested 8 brands to find the lowest-carb Thai curry pastes that still deliver authentic flavor.", date: "August 2026" },
+  { title: "Best Konjac & Shirataki Noodles for Keto Pad Thai", slug: "best-konjac-noodles-keto", description: "The best low-carb noodle alternatives for keto Pad Thai, drunken noodles, and Thai soups. Taste tests and carb comparisons.", date: "August 2026" },
+  { title: "Best Coconut Milk for Keto: Full-Fat & Low-Carb Picks", slug: "best-coconut-milk-keto", description: "Coconut milk is a keto staple for Thai curries. We rank the best full-fat, additive-free coconut milk brands.", date: "August 2026" },
+];
+---
+
+<BaseLayout
+  title="ThaiKeto — Thai Keto Diet, Recipes & Ingredients Guide"
+  description="Your complete guide to Thai keto cooking. Low-carb Thai recipes, ingredient guides, meal plans, and product recommendations for a ketogenic Thai lifestyle."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ThaiKeto",
+      "description": "Your guide to Thai keto diet, recipes, and ingredients",
+      "url": "https://thaiketo.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://thaiketo.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ThaiKeto",
+      "url": "https://thaiketo.com",
+      "description": "Expert guides on Thai keto cooking, recipes, and ingredients"
+    })} />
+  </Fragment>
+
+  <!-- Hero Section -->
+  <section class="relative bg-white overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
+          <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+          Thai Cuisine Meets Keto — Updated August 2026
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold leading-tight mb-6 text-primary">
+          Thai Keto
+          <span class="relative block text-accent">
+            Made Simple
+            <svg class="absolute -bottom-2 left-0 w-full h-3 text-accent/20" viewBox="0 0 300 12" fill="currentColor">
+              <path d="M0,8 Q150,0 300,8 L300,12 L0,12 Z"/>
+            </svg>
+          </span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-neutral-700 leading-relaxed mb-8 max-w-2xl mx-auto">
+          Your complete guide to combining the bold flavors of Thai cuisine with the ketogenic diet. Low-carb recipes, ingredient guides, meal plans, and product recommendations.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="/articles" class="btn btn-primary btn-xl">
+            Explore Articles
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/roundups" class="btn btn-secondary btn-xl">
+            Product Roundups
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto">
+          <div>
+            <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="text-sm font-semibold text-primary">Keto-Tested</div>
+            <div class="text-xs text-neutral-600">All recipes verified</div>
+          </div>
+          <div>
+            <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <div class="text-sm font-semibold text-primary">Authentic Thai</div>
+            <div class="text-xs text-neutral-600">Real flavors, low carb</div>
+          </div>
+          <div>
+            <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="text-sm font-semibold text-primary">Updated Weekly</div>
+            <div class="text-xs text-neutral-600">Fresh content</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section class="py-16 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-display font-semibold text-primary mb-4">
+          Thai Keto Articles & Guides
+        </h2>
+        <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+          In-depth guides, recipes, and meal plans for mastering Thai keto cooking
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.map((article) => (
+          <a href={`/articles/${article.slug}`} class="card card-hover group">
+            <div class="card-body">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="badge badge-accent text-xs">{article.category}</span>
+                <span class="text-xs text-neutral-500">{article.date}</span>
+              </div>
+              <h3 class="text-lg font-semibold text-primary mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
+                {article.title}
+              </h3>
+              <p class="text-neutral-600 text-sm line-clamp-3 mb-4">
+                {article.description}
+              </p>
+              <span class="text-accent font-medium text-sm flex items-center gap-1">
+                Read Article
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Roundups Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-display font-semibold text-primary mb-4">
+          Product Roundups
+        </h2>
+        <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+          The best keto-friendly Thai cooking products, tested and compared
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {roundups.map((roundup) => (
+          <a href={`/roundups/${roundup.slug}`} class="card card-hover group">
+            <div class="card-body">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="badge badge-primary text-xs">Roundup</span>
+                <span class="text-xs text-neutral-500">{roundup.date}</span>
+              </div>
+              <h3 class="text-lg font-semibold text-primary mb-2 group-hover:text-primary-600 transition-colors">
+                {roundup.title}
+              </h3>
+              <p class="text-neutral-600 text-sm line-clamp-3 mb-4">
+                {roundup.description}
+              </p>
+              <span class="text-accent font-medium text-sm flex items-center gap-1">
+                View Roundup
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display font-semibold mb-4 text-white">Get Weekly Thai Keto Recipes</h2>
+      <p class="text-lg text-primary-100 mb-8">
+        Join our newsletter for new Thai keto recipes, meal plans, and product recommendations every week.
+      </p>
+      <form class="kc-email-capture flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="/api/subscribe" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required class="flex-1 px-4 py-3 rounded-lg text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-accent" />
+        <input type="hidden" name="referrer" value="homepage" />
+        <button type="submit" class="btn btn-accent btn-lg whitespace-nowrap">Subscribe</button>
+      </form>
+      <p class="kc-email-note text-primary-200 text-sm mt-3"></p>
+      <p class="text-primary-200 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-display font-semibold text-primary text-center mb-12">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Can I eat Thai food on keto?</h3>
+          <p class="text-neutral-700">Yes! Many Thai dishes are naturally keto-friendly or easily adapted. Focus on curries with coconut milk, grilled meats (gai yang, moo ping), soups (tom yum, tom kha), and stir-fries without sugar. Avoid rice, noodles, and sweet sauces.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">What Thai ingredients are keto-friendly?</h3>
+          <p class="text-neutral-700">Coconut milk, fish sauce, shrimp paste, lemongrass, galangal, kaffir lime leaves, Thai basil, cilantro, chili peppers, and most Thai herbs are keto-friendly. Watch out for palm sugar, sweet soy sauce, and oyster sauce — use keto substitutes.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Is coconut milk keto?</h3>
+          <p class="text-neutral-700">Full-fat coconut milk is excellent for keto — it's high in healthy fats and low in carbs (about 3-4g net carbs per 1/2 cup). Always choose unsweetened, full-fat versions without added thickeners or sugar.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">What can I substitute for rice in Thai keto meals?</h3>
+          <p class="text-neutral-700">Cauliflower rice is the most popular substitute. Konjac rice, shirataki rice, and cabbage rice also work well. For a more authentic experience, try "khao pad" (Thai fried "rice") made with cauliflower rice.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Are Thai curries keto?</h3>
+          <p class="text-neutral-700">Green, red, yellow, Panang, and Massaman curries can all be keto when made without added sugar. Use full-fat coconut milk, check your curry paste for hidden sugars, and skip the rice. Most Thai curries are naturally high-fat and low-carb.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

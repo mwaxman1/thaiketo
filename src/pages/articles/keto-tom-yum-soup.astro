@@ -1,0 +1,97 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Keto Tom Yum Soup: Authentic Low-Carb Thai Recipe (2026)"
+  description="The classic hot and sour Thai soup made keto-friendly. Tom Yum Goong with shrimp, mushrooms, and aromatic herbs — under 5g net carbs."
+  canonical="https://thaiketo.com/articles/keto-tom-yum-soup"
+>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <header class="mb-10 text-center">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <span class="badge badge-accent text-xs">Recipes</span>
+        <span class="text-sm text-neutral-500">August 12, 2026</span>
+      </div>
+      <h1 class="text-3xl lg:text-4xl font-display font-semibold text-primary leading-tight mb-4">
+        Keto Tom Yum Soup: Authentic Low-Carb Thai Recipe
+      </h1>
+      <p class="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+        The classic hot and sour Thai soup made keto-friendly. Tom Yum Goong with shrimp, mushrooms, and aromatic herbs.
+      </p>
+    </header>
+
+    <div class="prose-thai">
+      <h2>Why Tom Yum Is the Ultimate Keto Soup</h2>
+      <p>Tom Yum is arguably the most keto-friendly dish in all of Thai cuisine. It's naturally low in carbohydrates, high in flavor, and requires no special substitutions to be keto-compatible. The classic version — Tom Yum Goong (with shrimp) — contains almost zero carbs from the broth, with only the mushrooms and a small amount of vegetables contributing to the carb count.</p>
+
+      <h2>Two Styles of Tom Yum</h2>
+      <p>There are two main versions of Tom Yum, and both are keto-friendly:</p>
+      <ul>
+        <li><strong>Tom Yum Nam Sai (clear):</strong> The classic clear broth version. Lighter, spicier, and more sour. This is the most keto-friendly option at ~3-4g net carbs per serving.</li>
+        <li><strong>Tom Yum Nam Khon (creamy):</strong> The richer version with added coconut milk or evaporated milk. Creamier and slightly milder. About 5-7g net carbs per serving with coconut milk.</li>
+      </ul>
+
+      <h2>Keto Tom Yum Goong (Clear Version)</h2>
+      <h3>Ingredients (Serves 4)</h3>
+      <ul>
+        <li>1 lb large shrimp, shell-on (peel and devein, reserve shells)</li>
+        <li>6 cups water or chicken stock</li>
+        <li>3 stalks lemongrass, bruised and cut into 2-inch pieces</li>
+        <li>5-6 slices galangal (about 1/4 inch thick)</li>
+        <li>5-6 kaffir lime leaves, torn</li>
+        <li>5-6 Thai bird chilies, crushed (adjust to heat preference)</li>
+        <li>8 oz straw mushrooms (or button mushrooms), halved</li>
+        <li>2-3 tbsp fish sauce</li>
+        <li>3-4 tbsp fresh lime juice</li>
+        <li>Fresh cilantro and Thai chili paste (nam prik pao) for serving</li>
+      </ul>
+
+      <h3>Instructions</h3>
+      <ol>
+        <li><strong>Make shrimp stock (optional but recommended):</strong> Sauté shrimp shells in a dry pot until pink and fragrant. Add water, bring to a boil, and simmer 10 minutes. Strain and discard shells. This step adds incredible depth.</li>
+        <li>Bring the stock or water to a boil. Add lemongrass, galangal, and kaffir lime leaves. Boil for 3-4 minutes until fragrant.</li>
+        <li>Add mushrooms and cook for 2-3 minutes.</li>
+        <li>Add shrimp and cook just until pink (about 2 minutes). Do not overcook.</li>
+        <li>Remove from heat. Stir in fish sauce and lime juice. Taste and adjust — it should be sour, salty, and spicy in perfect balance.</li>
+        <li>Serve immediately, garnished with fresh cilantro and a spoonful of nam prik pao (Thai chili paste) on the side.</li>
+      </ol>
+      <p><strong>Macros per serving:</strong> ~180 calories, 4g fat, 4g net carbs, 28g protein</p>
+
+      <h2>Creamy Keto Tom Yum (Nam Khon)</h2>
+      <p>For the creamy version, add 1 cup of full-fat coconut milk after step 4 and simmer for 2 more minutes before seasoning. This adds healthy fats and makes the soup more substantial as a meal.</p>
+      <p><strong>Macros per serving (creamy):</strong> ~280 calories, 18g fat, 6g net carbs, 28g protein</p>
+
+      <h2>Key Ingredients Explained</h2>
+      <ul>
+        <li><strong>Lemongrass:</strong> Provides the signature citrusy aroma. Bruise it with the back of a knife to release the oils. Don't eat it — it's fibrous.</li>
+        <li><strong>Galangal:</strong> Similar to ginger but more citrusy and piney. Don't substitute ginger — the flavor is different. Like lemongrass, it's for flavor, not eating.</li>
+        <li><strong>Kaffir lime leaves:</strong> The most important aromatic. Tear them to release the oils. They add an unmistakable citrus-floral note.</li>
+        <li><strong>Fish sauce:</strong> Provides the salty umami backbone. Don't skip it — there's no substitute.</li>
+        <li><strong>Nam prik pao:</strong> Thai roasted chili paste. Adds smoky depth and a touch of sweetness. Use sparingly on keto (about 1-2g carbs per teaspoon).</li>
+      </ul>
+    </div>
+
+    <section class="mt-16 bg-primary-50 rounded-lg p-8 text-center">
+      <h2 class="text-2xl font-display font-semibold text-primary mb-3">Get More Keto Thai Soup Recipes</h2>
+      <p class="text-neutral-700 mb-6">Subscribe for weekly recipes including Tom Kha Gai, Keto Wonton Soup, and more.</p>
+      <form class="kc-email-capture flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="/api/subscribe" method="POST">
+        <input type="email" name="email" placeholder="Your email" required class="form-input flex-1" />
+        <input type="hidden" name="referrer" value="article-keto-tom-yum-soup" />
+        <button type="submit" class="btn btn-primary btn-lg whitespace-nowrap">Subscribe</button>
+      </form>
+      <p class="kc-email-note text-sm text-neutral-500 mt-2"></p>
+    </section>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Keto Tom Yum Soup: Authentic Low-Carb Thai Recipe",
+    "description": "The classic hot and sour Thai soup made keto-friendly. Tom Yum Goong with shrimp, mushrooms, and aromatic herbs.",
+    "author": { "@type": "Person", "name": "ThaiKeto Team" },
+    "publisher": { "@type": "Organization", "name": "ThaiKeto" },
+    "datePublished": "2026-08-12",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://thaiketo.com/articles/keto-tom-yum-soup" }
+  })} />
+</BaseLayout>

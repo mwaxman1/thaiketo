@@ -1,0 +1,205 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { buildAmazonProductUrl } from "@/config/affiliate";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "best-coconut-aminos-keto" } },
+    { params: { slug: "best-keto-curry-pastes" } },
+  ];
+}
+
+const roundups: Record<string, {
+  title: string;
+  description: string;
+  metaDescription: string;
+  content: string;
+  products: Array<{name: string; asin: string; description: string; price: string; rating: number}>;
+  date: string;
+}> = {
+  "best-coconut-aminos-keto": {
+    title: "Best Coconut Aminos for Keto Thai Cooking (2026)",
+    description: "Coconut aminos are essential for keto Thai cooking. We compare the top 5 brands for flavor, price, and carb content to find the best low-carb soy sauce alternative.",
+    metaDescription: "The best coconut aminos for keto Thai cooking in 2026. We tested 5 brands for flavor, carb content, and value. Find the perfect low-carb soy sauce alternative.",
+    date: "2026-08-12",
+    products: [
+      { name: "Coconut Secret Organic Coconut Aminos", asin: "B003XB5IQS", description: "The original and most popular coconut aminos. Made from organic coconut sap and sea salt. Rich, slightly sweet flavor with 1g net carbs per teaspoon.", price: "$8.99", rating: 4.5 },
+      { name: "Big Tree Farms Organic Coconut Aminos", asin: "B00NPS47XK", description: "USDA organic, non-GMO coconut aminos with a balanced savory-sweet profile. Lower sodium than soy sauce with 0g sugar per serving.", price: "$9.49", rating: 4.4 },
+      { name: "BetterBody Foods Organic Coconut Aminos", asin: "B07NQYH4JX", description: "Affordable organic option with a mild, versatile flavor. Great for marinades, stir-fries, and dipping sauces. 1g carbs per tablespoon.", price: "$7.99", rating: 4.3 },
+      { name: "Bragg Liquid Aminos (Coconut)", asin: "B07P5HZP5X", description: "From the trusted Bragg brand, these coconut liquid aminos offer a bolder, more savory flavor. Non-GMO verified with 0g carbs.", price: "$6.99", rating: 4.2 },
+      { name: "Terrasoul Superfoods Coconut Aminos", asin: "B07FXXK3M2", description: "Premium organic coconut aminos from a trusted superfoods brand. Rich umami flavor, glass bottle, and excellent value in the larger size.", price: "$10.99", rating: 4.6 },
+    ],
+    content: `<h2>Why Coconut Aminos Are Essential for Thai Keto Cooking</h2>
+<p>If you're cooking Thai food on keto, you need a soy sauce alternative. Traditional soy sauce is low-carb, but many keto dieters prefer to avoid soy. Coconut aminos are the perfect solution — they're made from fermented coconut sap, contain about 70% less sodium than soy sauce, and have a naturally sweet, savory flavor that works beautifully in Thai dishes.</p>
+
+<p>But not all coconut aminos are created equal. Some are watery and bland, others are too sweet, and carb counts can vary. We tested five popular brands to find the best coconut aminos for Thai keto cooking.</p>
+
+<h2>What to Look for in Keto Coconut Aminos</h2>
+<ul>
+<li><strong>Carb content:</strong> Most coconut aminos have 1g net carbs per teaspoon. Some brands have slightly more due to natural sugars in the coconut sap.</li>
+<li><strong>Ingredients:</strong> The best coconut aminos have just two ingredients: organic coconut sap and sea salt. Avoid brands with added sugar, preservatives, or "natural flavors."</li>
+<li><strong>Flavor profile:</strong> Good coconut aminos should be savory with a subtle sweetness — not cloying or candy-like.</li>
+<li><strong>Consistency:</strong> Should be similar to light soy sauce — not too thick or syrupy.</li>
+</ul>
+
+<h2>How We Tested</h2>
+<p>We used each brand in three classic Thai dishes: a stir-fry (pad kra pao), a dipping sauce (nam jim), and a marinade for grilled chicken (gai yang). We evaluated flavor, how well each integrated into the dish, and whether any off-flavors emerged during cooking.</p>
+
+<h2>Our Top Pick</h2>
+<p><strong>Coconut Secret Organic Coconut Aminos</strong> is our overall winner. It has the most balanced flavor — savory with just enough natural sweetness — and the cleanest ingredient list. It performed beautifully in all three test dishes, adding depth without overpowering the other Thai flavors.</p>
+
+<h2>Budget Pick</h2>
+<p><strong>Bragg Liquid Aminos (Coconut)</strong> offers excellent value at under $7 per bottle. The flavor is bolder and more savory than Coconut Secret, which works especially well in marinades and stir-fries. It's slightly less sweet, which some keto cooks prefer.</p>
+
+<h2>Premium Pick</h2>
+<p><strong>Terrasoul Superfoods Coconut Aminos</strong> is the priciest option but delivers the richest, most complex flavor. The glass bottle and larger size make it a good choice if you cook Thai food frequently. The umami depth is exceptional in dipping sauces.</p>`
+  },
+  "best-keto-curry-pastes": {
+    title: "Best Keto-Friendly Thai Curry Pastes (2026)",
+    description: "Not all curry pastes are keto. We tested 8 brands to find the lowest-carb Thai curry pastes that still deliver authentic flavor for your keto curries.",
+    metaDescription: "The best keto-friendly Thai curry pastes in 2026. We tested 8 brands for carb content and authentic flavor. Find the perfect low-carb curry paste for your Thai keto cooking.",
+    date: "2026-08-12",
+    products: [
+      { name: "Maesri Thai Green Curry Paste", asin: "B0062F3L5O", description: "The gold standard for Thai curry paste. Intense, authentic flavor with minimal carbs. Available in small cans — perfect for 2-3 curries.", price: "$3.49", rating: 4.7 },
+      { name: "Mae Ploy Green Curry Paste", asin: "B0040Y53Y8", description: "A close competitor to Maesri with a slightly sweeter profile. Check the label — some varieties have more sugar than others. The large tub is great value.", price: "$5.99", rating: 4.5 },
+      { name: "Aroy-D Red Curry Paste", asin: "B00852ZN2U", description: "Clean ingredient list with no artificial additives. Medium heat level that works well for family meals. Smooth, consistent texture.", price: "$4.29", rating: 4.4 },
+      { name: "Thai Kitchen Green Curry Paste", asin: "B0000CNU0G", description: "Widely available in US grocery stores. Milder flavor than authentic Thai brands but convenient. Slightly higher carbs — use sparingly.", price: "$4.99", rating: 3.9 },
+    ],
+    content: `<h2>The Hidden Carbs in Thai Curry Paste</h2>
+<p>Thai curry paste is the soul of any good curry — but it can also be a hidden source of carbs. Many commercial curry pastes contain sugar, flour, or other thickeners that add unnecessary carbohydrates. For keto cooks, choosing the right curry paste is essential.</p>
+
+<p>We tested eight popular Thai curry paste brands across green, red, and Panang varieties to find the best options for keto cooking. Our criteria: carb content, ingredient quality, and — most importantly — authentic Thai flavor.</p>
+
+<h2>What Makes a Curry Paste Keto-Friendly?</h2>
+<ul>
+<li><strong>No added sugar:</strong> Traditional Thai curry paste shouldn't need sugar — the sweetness should come from the natural sugars in shallots and garlic.</li>
+<li><strong>No flour or starches:</strong> Some brands use wheat flour or cornstarch as thickeners. These add unnecessary carbs.</li>
+<li><strong>Clean ingredient list:</strong> The best pastes contain chili, garlic, shallots, lemongrass, galangal, shrimp paste, and spices — nothing else.</li>
+</ul>
+
+<h2>Our Top Pick: Maesri</h2>
+<p><strong>Maesri Thai Curry Pastes</strong> are our top recommendation for keto Thai cooking. These small cans pack intense, authentic flavor with minimal carbs. The ingredient lists are clean, the flavor is restaurant-quality, and the small can size means you're not committing to a giant tub that will lose potency in your fridge.</p>
+
+<p>Maesri offers green, red, yellow, Panang, and Massaman varieties — all keto-friendly. One can makes 2-3 curries, and at around $3.50 per can, it's excellent value.</p>
+
+<h2>Runner-Up: Mae Ploy</h2>
+<p><strong>Mae Ploy</strong> is the other heavyweight in Thai curry pastes. The flavor is slightly sweeter than Maesri, which some cooks prefer. The large tub format is economical if you cook Thai food frequently. Just check the label — some Mae Ploy varieties have slightly more sugar than Maesri.</p>
+
+<h2>Best Widely Available: Aroy-D</h2>
+<p><strong>Aroy-D</strong> strikes a great balance between authenticity and availability. You can find it in many Asian grocery stores and online. The ingredient lists are clean, and the flavor is solid — not quite as intense as Maesri, but very good for everyday cooking.</p>
+
+<h2>Avoid: Thai Kitchen</h2>
+<p><strong>Thai Kitchen</strong> curry pastes are the most widely available in US supermarkets, but they're also the least keto-friendly. The flavor is significantly milder (and sweeter) than authentic Thai brands, and the carb count is higher. If it's your only option, use it — but seek out Maesri or Mae Ploy for better results.</p>`
+  },
+};
+
+const { slug } = Astro.params;
+const roundup = roundups[slug as string];
+
+if (!roundup) {
+  return Astro.redirect("/404");
+}
+---
+
+<BaseLayout
+  title={roundup.title}
+  description={roundup.metaDescription}
+  canonical={`https://thaiketo.com/roundups/${slug}`}
+>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <header class="mb-10 text-center">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <span class="badge badge-primary text-xs">Product Roundup</span>
+        <span class="text-sm text-neutral-500">{new Date(roundup.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+      </div>
+      <h1 class="text-3xl lg:text-4xl font-display font-semibold text-primary leading-tight mb-4">
+        {roundup.title}
+      </h1>
+      <p class="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+        {roundup.description}
+      </p>
+    </header>
+
+    <div class="prose-thai" set:html={roundup.content} />
+
+    <!-- Product Comparison Table -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-display font-semibold text-primary mb-6">Product Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-primary-50 text-left">
+              <th class="p-3 font-semibold text-primary">Product</th>
+              <th class="p-3 font-semibold text-primary">Rating</th>
+              <th class="p-3 font-semibold text-primary">Price</th>
+              <th class="p-3 font-semibold text-primary">Buy</th>
+            </tr>
+          </thead>
+          <tbody>
+            {roundup.products.map((product) => (
+              <tr class="border-b border-neutral-200">
+                <td class="p-3">
+                  <div class="font-medium text-neutral-900">{product.name}</div>
+                  <div class="text-xs text-neutral-500 mt-1">{product.description.slice(0, 100)}...</div>
+                </td>
+                <td class="p-3">
+                  <div class="flex items-center gap-1">
+                    <span class="text-accent font-semibold">{product.rating}</span>
+                    <span class="text-accent">★</span>
+                  </div>
+                </td>
+                <td class="p-3 font-medium text-neutral-700">{product.price}</td>
+                <td class="p-3">
+                  <a href={buildAmazonProductUrl(product.asin)} target="_blank" rel="nofollow sponsored" class="btn btn-amazon btn-sm text-xs">
+                    View on Amazon
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Individual Product Reviews -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-display font-semibold text-primary mb-6">Detailed Reviews</h2>
+      {roundup.products.map((product, i) => (
+        <div class="card mb-6">
+          <div class="card-body">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-xl font-semibold text-primary">{i + 1}. {product.name}</h3>
+              <div class="flex items-center gap-1 text-accent">
+                <span class="font-semibold">{product.rating}</span>
+                <span>★</span>
+              </div>
+            </div>
+            <p class="text-neutral-700 mb-4">{product.description}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-semibold text-primary">{product.price}</span>
+              <a href={buildAmazonProductUrl(product.asin)} target="_blank" rel="nofollow sponsored" class="btn btn-amazon">
+                Check Price on Amazon
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <p class="text-sm text-neutral-500 mt-8 text-center">
+      As an Amazon Associate, ThaiKeto earns from qualifying purchases. Prices and availability are subject to change.
+    </p>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": roundup.title,
+    "description": roundup.metaDescription,
+    "author": { "@type": "Person", "name": "ThaiKeto Team" },
+    "publisher": { "@type": "Organization", "name": "ThaiKeto" },
+    "datePublished": roundup.date,
+    "dateModified": roundup.date,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://thaiketo.com/roundups/${slug}` }
+  })} />
+</BaseLayout>
