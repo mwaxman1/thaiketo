@@ -114,7 +114,7 @@ const articles: Record<string, {
 <h2>Keto Thai Green Curry (Gaeng Keow Wan)</h2>
 <p>Green curry is the spiciest and most herbaceous of the Thai curries. The green color comes from fresh green chilies, cilantro, and kaffir lime in the curry paste.</p>
 
-<h3>Ingredients (Serves 4)</h3>
+<h3>Green Curry Ingredients (Serves 4)</h3>
 <ul>
 <li>2 cans (13.5 oz each) full-fat coconut milk</li>
 <li>3-4 tbsp green curry paste (check label for sugar — Maesri and Mae Ploy are good options)</li>
@@ -129,7 +129,7 @@ const articles: Record<string, {
 <li>2-3 Thai bird chilies (optional, for extra heat)</li>
 </ul>
 
-<h3>Instructions</h3>
+<h3>Green Curry Instructions</h3>
 <ol>
 <li>Scoop the thick cream from one can of coconut milk into a wok or large pot. Heat over medium-high until it starts to separate and the oil rises to the surface (about 3-4 minutes).</li>
 <li>Add the green curry paste and stir-fry in the coconut cream for 2-3 minutes until very fragrant.</li>
@@ -144,7 +144,7 @@ const articles: Record<string, {
 <h2>Keto Thai Red Curry (Gaeng Phed)</h2>
 <p>Red curry is milder than green but still packs a punch. The red color comes from dried red chilies in the paste, giving it a deeper, more roasted flavor.</p>
 
-<h3>Ingredients (Serves 4)</h3>
+<h3>Red Curry Ingredients (Serves 4)</h3>
 <ul>
 <li>2 cans (13.5 oz each) full-fat coconut milk</li>
 <li>3-4 tbsp red curry paste</li>
@@ -158,7 +158,7 @@ const articles: Record<string, {
 <li>1-2 tsp erythritol</li>
 </ul>
 
-<h3>Instructions</h3>
+<h3>Red Curry Instructions</h3>
 <ol>
 <li>Follow the same coconut cream + curry paste frying method as the green curry.</li>
 <li>Add chicken and stir-fry until sealed.</li>
@@ -171,7 +171,7 @@ const articles: Record<string, {
 <h2>Keto Panang Curry (Gaeng Panang)</h2>
 <p>Panang is the richest, creamiest Thai curry — thicker than green or red, with a subtle peanut flavor and a touch of sweetness. It's the ultimate comfort food curry.</p>
 
-<h3>Ingredients (Serves 4)</h3>
+<h3>Panang Curry Ingredients (Serves 4)</h3>
 <ul>
 <li>2 cans (13.5 oz each) full-fat coconut milk</li>
 <li>3-4 tbsp Panang curry paste</li>
@@ -184,7 +184,7 @@ const articles: Record<string, {
 <li>Thai basil and sliced red chili for garnish</li>
 </ul>
 
-<h3>Instructions</h3>
+<h3>Panang Curry Instructions</h3>
 <ol>
 <li>Fry the Panang curry paste in coconut cream as described above.</li>
 <li>Add beef and sear quickly (1-2 minutes per side).</li>
@@ -223,7 +223,7 @@ if (!article) {
     <header class="mb-10 text-center">
       <div class="flex items-center justify-center gap-2 mb-4">
         <span class="badge badge-accent text-xs">{article.category}</span>
-        <span class="text-sm text-neutral-500">{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        <span class="text-sm text-neutral-600">{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
       </div>
       <h1 class="text-3xl lg:text-4xl font-display font-semibold text-primary leading-tight mb-4">
         {article.title}
@@ -259,7 +259,7 @@ if (!article) {
         <input type="hidden" name="referrer" value={`article-${slug}`} />
         <button type="submit" class="btn btn-primary btn-lg whitespace-nowrap">Subscribe</button>
       </form>
-      <p class="kc-email-note text-sm text-neutral-500 mt-2"></p>
+      <p class="kc-email-note text-sm text-neutral-600 mt-2"></p>
     </section>
   </article>
 

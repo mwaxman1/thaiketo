@@ -153,11 +153,11 @@
   }
 
   .btn-accent {
-    @apply bg-accent text-white hover:bg-accent-600;
+    @apply bg-accent-700 text-white hover:bg-accent-800;
   }
 
   .btn-amazon {
-    @apply bg-amazon text-white hover:bg-amazon-dark;
+    @apply bg-amazon text-neutral-900 hover:bg-amazon-dark;
   }
 
   .btn-lg {
@@ -189,7 +189,7 @@
   }
 
   .badge-accent {
-    @apply bg-accent text-white;
+    @apply bg-accent-700 text-white;
   }
 
   .form-input {

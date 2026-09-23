@@ -28,10 +28,11 @@ const articles = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {articles.map((article) => (
         <a href={`/articles/${article.slug}`} class="card card-hover group">
+          <img src={`/images/placeholders/${article.category.toLowerCase().replace(" ", "-")}.svg`} alt={`${article.category} — ThaiKeto category illustration`} width="800" height="400" class="block w-full h-auto" />
           <div class="card-body">
             <div class="flex items-center gap-2 mb-3">
               <span class="badge badge-accent text-xs">{article.category}</span>
-              <span class="text-xs text-neutral-500">{article.date}</span>
+              <span class="text-xs text-neutral-600">{article.date}</span>
             </div>
             <h2 class="text-lg font-semibold text-primary mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
               {article.title}
@@ -39,7 +40,7 @@ const articles = [
             <p class="text-neutral-600 text-sm line-clamp-3 mb-4">
               {article.description}
             </p>
-            <span class="text-accent font-medium text-sm flex items-center gap-1">
+            <span class="text-accent-700 font-medium text-sm flex items-center gap-1">
               Read Article
               <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

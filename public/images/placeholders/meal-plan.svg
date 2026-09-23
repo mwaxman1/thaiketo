@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-label="ThaiKeto Meal Plan">
+  <!-- ThaiKeto designed placeholder: brand mark + category label, built from @theme tokens. Not a photograph. -->
+  <defs>
+    <pattern id="p" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20 6c0 8-6 14-14 14 0-8 6-14 14-14zM40 26c0 8-6 14-14 14 0-8 6-14 14-14z" fill="#558B2F" fill-opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="400" fill="#F1F8E9"/>
+  <rect width="800" height="400" fill="url(#p)"/>
+  <rect x="0" y="392" width="800" height="8" fill="#558B2F" fill-opacity="0.25"/>
+  <g transform="translate(360 118) scale(2.5)"><rect width="32" height="32" rx="8" fill="#1B5E20"/><path d="M7 25C7 14.5 14 7 25 7c0 11-7.5 18-18 18z" fill="#FFD54F"/><path d="M8.5 23.5 21 11" stroke="#1B5E20" stroke-width="1.6" stroke-linecap="round"/><path d="M13 19h4.5M15.5 16.5H20M13.5 14.5v3" stroke="#1B5E20" stroke-width="1.2" stroke-linecap="round"/></g>
+  <text x="400" y="248" text-anchor="middle" font-family="Inter Tight, Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="34" font-weight="600" letter-spacing="-0.5" fill="#1B5E20">Meal Plan</text>
+  <text x="400" y="284" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="18" font-weight="500" letter-spacing="3" fill="#5C5548">THAIKETO</text>
+</svg>

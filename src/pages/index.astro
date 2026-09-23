@@ -54,14 +54,14 @@ const roundups = [
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
       <div class="max-w-3xl mx-auto text-center">
-        <div class="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
+        <div class="inline-flex items-center px-4 py-2 bg-accent/10 text-accent-700 rounded-full text-sm font-semibold mb-6">
           <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
           Thai Cuisine Meets Keto — Updated August 2026
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold leading-tight mb-6 text-primary">
           Thai Keto
-          <span class="relative block text-accent">
+          <span class="relative block text-accent-700">
             Made Simple
             <svg class="absolute -bottom-2 left-0 w-full h-3 text-accent/20" viewBox="0 0 300 12" fill="currentColor">
               <path d="M0,8 Q150,0 300,8 L300,12 L0,12 Z"/>
@@ -88,7 +88,7 @@ const roundups = [
         <!-- Trust Indicators -->
         <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto">
           <div>
-            <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
+            <div class="w-12 h-12 bg-accent/10 text-accent-700 rounded-lg flex items-center justify-center mx-auto mb-3">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -97,7 +97,7 @@ const roundups = [
             <div class="text-xs text-neutral-600">All recipes verified</div>
           </div>
           <div>
-            <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
+            <div class="w-12 h-12 bg-accent/10 text-accent-700 rounded-lg flex items-center justify-center mx-auto mb-3">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -106,7 +106,7 @@ const roundups = [
             <div class="text-xs text-neutral-600">Real flavors, low carb</div>
           </div>
           <div>
-            <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
+            <div class="w-12 h-12 bg-accent/10 text-accent-700 rounded-lg flex items-center justify-center mx-auto mb-3">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -134,10 +134,11 @@ const roundups = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.map((article) => (
           <a href={`/articles/${article.slug}`} class="card card-hover group">
+            <img src={`/images/placeholders/${article.category.toLowerCase().replace(" ", "-")}.svg`} alt={`${article.category} — ThaiKeto category illustration`} width="800" height="400" class="block w-full h-auto" />
             <div class="card-body">
               <div class="flex items-center gap-2 mb-3">
                 <span class="badge badge-accent text-xs">{article.category}</span>
-                <span class="text-xs text-neutral-500">{article.date}</span>
+                <span class="text-xs text-neutral-600">{article.date}</span>
               </div>
               <h3 class="text-lg font-semibold text-primary mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
                 {article.title}
@@ -145,7 +146,7 @@ const roundups = [
               <p class="text-neutral-600 text-sm line-clamp-3 mb-4">
                 {article.description}
               </p>
-              <span class="text-accent font-medium text-sm flex items-center gap-1">
+              <span class="text-accent-700 font-medium text-sm flex items-center gap-1">
                 Read Article
                 <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -173,10 +174,11 @@ const roundups = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {roundups.map((roundup) => (
           <a href={`/roundups/${roundup.slug}`} class="card card-hover group">
+            <img src="/images/placeholders/roundup.svg" alt="Product roundup — ThaiKeto category illustration" width="800" height="400" class="block w-full h-auto" />
             <div class="card-body">
               <div class="flex items-center gap-2 mb-3">
                 <span class="badge badge-primary text-xs">Roundup</span>
-                <span class="text-xs text-neutral-500">{roundup.date}</span>
+                <span class="text-xs text-neutral-600">{roundup.date}</span>
               </div>
               <h3 class="text-lg font-semibold text-primary mb-2 group-hover:text-primary-600 transition-colors">
                 {roundup.title}
@@ -184,7 +186,7 @@ const roundups = [
               <p class="text-neutral-600 text-sm line-clamp-3 mb-4">
                 {roundup.description}
               </p>
-              <span class="text-accent font-medium text-sm flex items-center gap-1">
+              <span class="text-accent-700 font-medium text-sm flex items-center gap-1">
                 View Roundup
                 <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
