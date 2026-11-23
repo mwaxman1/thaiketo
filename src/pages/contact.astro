@@ -27,7 +27,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
         The best way to stay updated is to subscribe to our newsletter. We send weekly Thai keto recipes, meal plans, and product recommendations.
       </p>
 
-      <form class="kc-email-capture flex flex-col sm:flex-row gap-3 max-w-md not-prose mt-4" action="https://api.sequenzy.com/api/v1/forms/o76kxb87r26dd3749df6ejqy" method="POST">
+      <form class="kc-email-capture flex flex-col sm:flex-row gap-3 max-w-md not-prose mt-4" action="/api/lead-submit" method="POST" data-lead-form>
         <input type="email" name="email" placeholder="Your email address" required class="form-input flex-1" />
         <input type="hidden" name="referrer" value="contact" />
         <button type="submit" class="btn btn-primary btn-lg whitespace-nowrap">Subscribe</button>

@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import LogoMark from "@components/LogoMark.astro";
 import AnalyticsHead from "@components/AnalyticsHead.astro";
 import ConsentBanner from "@components/ConsentBanner.astro";
+import ConversionTracking from "@components/ConversionTracking.astro";
 
 export interface Props {
   title?: string;
@@ -71,7 +72,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
     <slot name="head" />
     <!-- GA4 with consent-mode defaults queued before gtag.js (fleet analytics standard). -->
-    <AnalyticsHead measurementId="G-72EQLJG6QD" />
+    <AnalyticsHead measurementId="G-72EQLJG6QD" pixelId="999120903204453" />
   </head>
   <body class="min-h-screen bg-neutral-100 font-body text-neutral-900 antialiased">
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md z-50">
@@ -180,6 +181,12 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
       });
       // Panel is md:hidden; don't leave the page scroll-locked if the viewport grows past md
       matchMedia("(min-width: 768px)").addEventListener("change", (e) => e.matches && setOpen(false));
+    </script>
+
+    <ConversionTracking property="thaiketo.com" />
+    <script>
+      import { mountLeadTracking } from "../lib/lead-tracking.js";
+      mountLeadTracking(window, document, { intercept: true });
     </script>
 
   </body>
